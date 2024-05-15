@@ -12,14 +12,14 @@ import java.util.List;
 @Configuration
 @Profile("local")
 public class LocalConfig {
+
     @Autowired
     private UserRepository repository;
 
     @Bean
     public void startDB() {
         User u1 = new User(null, "Joao", "joao@mail.com", "123");
-        User u2 = new User(null, "Maria", "maria" +
-                "@mail.com", "123");
+        User u2 = new User(null, "Maria", "maria@mail.com", "123");
 
         repository.saveAll(List.of(u1, u2));
     }
